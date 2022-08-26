@@ -1,3 +1,6 @@
+import django_on_heroku
+import dj_database_url
+
 from .base import *
 
 DEBUG = False
@@ -6,7 +9,7 @@ ALLOWED_HOSTS = ['fadi-rezek-salloum.herokuapp.com']
 
 django_heroku.settings(locals())
 
-DATABASES['default'] = dj_database_url.config()
+DATABASES = { 'default': dj_database_url.config() }
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
