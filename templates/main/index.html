@@ -1,0 +1,499 @@
+{% extends '_base.html' %}
+
+{% load static %}
+
+{% block keywords %}
+Fadi Rezek Salloum, Portfolio, Web Developer, Full Stack Web Developer
+{% endblock keywords %}
+
+{% block content %} 
+
+<!-- Start Main -->
+<main>
+
+    {% if messages %}
+
+        {% for message in messages %}
+
+        <div class="modal fade show" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-modal="true" role="dialog">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header modal__title">
+                        <h5 class="modal-title fw-bold" id="staticBackdropLabel">
+                            {% if message.tags == 'error' %}
+                                Message Not Sent!
+                            {% else %}
+                                Message Sent!
+                            {% endif %}
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                            <i class="fas fa-close modal__close"></i>
+                        </button>
+                    </div>
+                    <div class="modal-body py-5">
+                        {{ message }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    {% endif %}
+
+    <!-- Start Intro -->
+    <section id="home" class="intro-section">
+        <div class="container">
+            <div class="row align-items-center text-white">
+                <div class="col-md-6 intros">
+                    <h1 class="display-2">
+                        <span class="intro__heading">
+                            Hi, I'm Fadi Rezek Salloum
+                        </span>
+                        <span class="intro__description lh-base">
+                            Full-Stack Web Developer
+                            <br />
+                            Motivated web developer who loves to always
+                            learn new techniques, creatively solve
+                            problems and develop maintainable websites.
+                        </span>
+                    </h1>
+                    <a href="#contact" class="btn rounded-pill btn__rounded">
+                        Get in Touch
+                        <span>
+                            <i class="fas fa-arrow-right"></i>
+                        </span>
+                    </a>
+                </div>
+                <div class="col-md-6 intros">
+                    <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_zpdtmajt.json"
+                        background="transparent" speed="1" class="lottie__img" loop autoplay></lottie-player>
+                </div>
+            </div>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#fff" fill-opacity="1"
+                d="M0,128L40,112C80,96,160,64,240,90.7C320,117,400,203,480,197.3C560,192,640,96,720,53.3C800,11,880,21,960,64C1040,107,1120,181,1200,192C1280,203,1360,149,1400,122.7L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z">
+            </path>
+        </svg>
+    </section>
+    <!-- End Intro -->
+
+    <!-- Start About -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h1 class="fw-bold mb-3">
+                        About Me
+                    </h1>
+                    <div class="heading__line mb-5"></div>
+                </div>
+                <div class="col-md-6">
+                    <p>
+                        Software Engineer (Python, Django, Django Rest Framework, and React) with 4+ years
+                        experience in software development with a focus on the backend side. I also worked on some
+                        AI projects and implemented them into the web.
+                    </p>
+                </div>
+
+                <div class="col-md-6 about__info">
+                    <div class="row text-center">
+                        <div class="col-6">
+                            <h4 class="fw-bold">
+                                +04
+                                <br>
+                                Years <br> Experience
+                            </h4>
+                        </div>
+                        <div class="col-6">
+                            <h4 class="fw-bold">
+                                +8
+                                <br>
+                                Completed <br> Projects
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 mt-5 text-center">
+                    <a href="{{cv.link}}" download="true" class="btn btn-lg about__cv-btn shadow">
+                        Download CV
+                        <i class="fa-solid fa-cloud-arrow-down ps-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End About -->
+
+    <!-- Start Education -->
+    <section id="education" class="education-section">
+        <div class="container mt-3">
+            <div class="row text-center">
+                <h1 class="fw-bold mb-3">
+                    Education
+                </h1>
+                <div class="heading__line mb-1"></div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row mt-5">
+                <div class="col-lg-4 education__card">
+                    <div class="education__container">
+                        <div class="education__container-div">
+                            <div class="education__container-icon education__container-icon1"></div>
+                            <div class="education__container-icon education__container-icon2"></div>
+                            <div class="education__container-icon education__container-icon3"></div>
+                        </div>
+                        <div class="row text-center">
+                            <i class="fas fa-graduation-cap pb-2 education__icon"></i>
+                            <p class="text-center fw-bold education__title">
+                                BSc. in Software Engineering
+                            </p>
+                            <p class="text-center text-muted education__description">
+                                Nov 2015 - Mar 2022
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 education__card">
+                    <div class="education__container">
+                        <div class="education__container-div">
+                            <div class="education__container-icon education__container-icon1"></div>
+                            <div class="education__container-icon education__container-icon2"></div>
+                            <div class="education__container-icon education__container-icon3"></div>
+                        </div>
+                        <div class="row text-center">
+                            <i class="fas fa-book pb-2 education__icon"></i>
+                            <p class="text-center fw-bold education__title">
+                                Master's in Web Sciences
+                            </p>
+                            <p class="text-center text-muted education__description">
+                                Aug 2022 - Present
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 education__card">
+                    <div class="education__container">
+                        <div class="education__container-div">
+                            <div class="education__container-icon education__container-icon1"></div>
+                            <div class="education__container-icon education__container-icon2"></div>
+                            <div class="education__container-icon education__container-icon3"></div>
+                        </div>
+                        <div class="row text-center">
+                            <i class="fas fa-book pb-2 education__icon"></i>
+                            <p class="text-center fw-bold education__title">
+                                Master's of Science in Information Technology
+                            </p>
+                            <p class="text-center text-muted education__description">
+                                Sep 2022 - Present
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Education -->
+
+    <!-- Start Skills -->
+    <section id="skills" class="skills-section">
+        <div class="container mt-5">
+            <div class="row text-center">
+                <h1 class="fw-bold mb-3">
+                    Skills
+                </h1>
+                <div class="heading__line mb-1"></div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 skills mt-4 pt-3">
+                    <div class="skills__content pt-5">
+                        <div class="skills__content-icon fas fa-code"></div>
+                        <h3 class="skills__content-title mt-1">
+                            Front End Developer
+                        </h3>
+                        <p class="lh-lg">
+                            I create the UI/UX.
+                        </p>
+                        <div class="skills__content-skills">
+
+                            {% for skill in frontend %}
+
+                            <div class="skills__content-skill">
+                                {{skill.name}}
+                            </div>
+
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 skills mt-4 text-end">
+                    <div class="skills__content">
+                        <img src="{% static 'images/frontend.webp' %}" alt="Front End" class="img-fluid skills__content-img">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 skills mt-4 text-start">
+                    <div class="skills__content">
+                        <img src="{% static 'images/backend.webp' %}" alt="Back End" class="img-fluid skills__content-img">
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 skills mt-4 pt-3">
+                    <div class="skills__content pt-5">
+                        <div class="skills__content-icon fas fa-server"></div>
+                        <h3 class="skills__content-title mt-1">
+                            Back End Developer
+                        </h3>
+                        <p class="lh-lg">
+                            I create the database scheme and the backend for the web application.
+                        </p>
+                        <div class="skills__content-skills">
+                            {% for skill in backend %}
+
+                            <div class="skills__content-skill">
+                                {{skill.name}}
+                            </div>
+
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 skills mt-4 pt-3">
+                    <div class="skills__content pt-5">
+                        <div class="skills__content-icon fas fa-plus"></div>
+                        <h3 class="skills__content-title mt-1">
+                            Other Skills
+                        </h3>
+                        <p class="lh-lg">
+                            Other skills and technologies I use.
+                        </p>
+                        <div class="skills__content-skills">
+                            {% for skill in other %}
+
+                            <div class="skills__content-skill">
+                                {{skill.name}}
+                            </div>
+
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 skills mt-4 text-end">
+                    <div class="skills__content">
+                        <img src="{% static 'images/other.webp' %}" alt="Other" class="img-fluid skills__content-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Skills -->
+
+    <!-- Start Portfolio -->
+    <section id="portfolio" class="protfolio-section">
+        <div class="container mt-5">
+            <div class="row text-center">
+                <h1 class="fw-bold mb-3">
+                    Portfolio
+                </h1>
+                <div class="heading__line mb-1"></div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 py-5">
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+
+                            {% for project in object_list %}
+
+                            <div class="swiper-slide">
+                                <div class="card portfolio__card">
+                                    <img src="{{project.thumbnail.url}}" alt="{{project.name}}"
+                                        class="card-img-top">
+                                    <div class="card-body">
+                                        <div class="card-title text-center">
+                                            {{project.name}}
+                                        </div>
+                                        <div class="card-text">
+                                            {{project.description|truncatechars:25}}
+                                        </div>
+                                        <a href="{{project.get_absolute_url}}" class="btn portfolio__card-btn mt-4">
+                                            View Details
+                                            <i class="fas fa-search"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {% empty %}
+
+                            <div class="w-100 text-center">
+                                <h4>
+                                    There are no projects created yet!
+                                </h4>
+                            </div>
+
+                            {% endfor %}
+
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Portfolio -->
+
+    <!-- Start Contact -->
+    <section id="contact" class="contact-section">
+        <div class="container mt-5">
+            <div class="row text-center">
+                <h1 class="fw-bold mb-3">
+                    Contact
+                </h1>
+                <div class="heading__line mb-1"></div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row text-white mt-5">
+                <div class="col-12 col-lg-6 contact__gradient shadow p-3">
+                    <div class="contact__info w-100">
+                        <h2 class="fw-bold">
+                            100% Satisfaction Guaranteed!
+                        </h2>
+                        <div class="contact__social">
+                            <a href="https://github.com/fadi-rezek-salloum/" target="_blank"
+                                class="contact__social-link">
+                                <i class="fab fa-github pe-1"></i>
+                                Github Account
+                            </a>
+                            <a href="https://linkedin.com/in/fadi-rezek-salloum/" target="_blank"
+                                class="contact__social-link">
+                                <i class="fab fa-linkedin pe-1"></i>
+                                LinkedIn Account
+                            </a>
+                            <a href="https://facebook.com/fadi.rezeksalloum/" target="_blank"
+                                class="contact__social-link">
+                                <i class="fab fa-facebook-square pe-1"></i>
+                                Facebook Account
+                            </a>
+                            <a href="https://instagram.com/fadi.rezek.salloum/" target="_blank"
+                                class="contact__social-link">
+                                <i class="fab fa-instagram pe-1"></i>
+                                Instagram Account
+                            </a>
+                            <a href="mailto:fadirezeksalloum.dev@gmail.com" target="_blank"
+                                class="contact__social-link">
+                                <i class="fas fa-envelope pe-1"></i>
+                                fadirezeksalloum.dev@gmail.com
+                            </a>
+                            <a href="tel:00963993791128" target="_blank" class="contact__social-link">
+                                <i class="fas fa-phone pe-1"></i>
+                                +963 993 791 128
+                            </a>
+                        </div>
+                        <div class="contact__brief mt-5">
+                            <h4>
+                                What will be the next step?
+                            </h4>
+                            <ul class="contact__brief-list">
+                                <li>We'll discuss the project.</li>
+                                <li>We'll agree to an arrangement.</li>
+                                <li>I'll start building the project</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6 bg-white shadow p-3">
+                    <div class="contact__form w-100 pb-2">
+                        <h3 class="contact__form-title mb-5 mt-1">
+                            Start Your Project
+                        </h3>
+                        <form method="POST" class="row" action="{% url 'contact:contact' %}">
+                            {% csrf_token %}
+                            <div class="col-lg-6 col-md-6 mb-3">
+                                <input type="text" name="first_name" placeholder="First Name..." id="inputFirstName"
+                                    class="shadow form-control form-control-lg" required>
+                            </div>
+                            <div class="col-lg-6 col-md-6 mb-3">
+                                <input type="text" name="last_name" placeholder="Last Name..." id="inputLastName"
+                                    class="shadow form-control form-control-lg" required>
+                            </div>
+                            <div class="col-lg-12 mb-3">
+                                <input type="email" name="email" placeholder="Email Address..." id="inputEmail"
+                                    class="shadow form-control form-control-lg" required>
+                            </div>
+                            <div class="col-lg-12 mb-3">
+                                <textarea name="message" id="message" rows="8" placeholder="Message..."
+                                    class="shadow form-control form-control-lg" required></textarea>
+                            </div>
+                            <div class="text-center d-grid mt-1">
+                                <button type="submit" class="btn contact__form-btn rounded-pill py-3">
+                                    Submit
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Contact -->
+</main>
+<!-- End Main -->
+
+{% endblock content %}
+
+{% block scripts %}
+
+<script>
+    let swiper = new Swiper(".swiper", {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        coverflowEffect: {
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: false,
+        },
+        keyboard: {
+            enabled: true,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+
+    const messageModal = document.getElementById('staticBackdrop');
+
+    if ( messageModal ) {
+        messageModal.style.background = 'rgba(0, 0, 0, .8)';
+        messageModal.style.display = 'block';
+
+        closeBtn = document.querySelector('.btn-close');
+
+        closeBtn.addEventListener('click', () => {
+            messageModal.style.display = 'none';
+        })
+    }
+
+</script>
+
+{% endblock scripts %}

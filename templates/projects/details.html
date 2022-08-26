@@ -1,0 +1,61 @@
+{% extends '_base.html' %}
+
+{% block keywords %}{% for tag in object.get_tags %}{{ tag }}{% if not forloop.last %}, {% endif %}{% endfor %}{% endblock keywords %}
+
+{% block content %}
+<main>
+    <section id="details" class="details-section pt-5">
+        <div class="container my-5 pt-5">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="row">
+                        <img src="{{object.thumbnail.url}}" alt="Project Image" class="img-fluid rounded details__img">
+                        <h1 class="mt-5">Tags</h1>
+                        <div class="tags mt-3">
+
+                            {% for tag in object.get_tags %}
+
+                            <div class="rounded-pill tag">
+                                <span>{{tag}}</span>
+                            </div>
+
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 ps-lg-5 mt-sm-5">
+                    <h1 class="fw-bold">
+                        {{object.name}}
+                    </h1>
+                    <p class="lh-lg mt-5">
+                        {{object.description}}
+                    </p>
+                    <hr class="mt-5" />
+                    <div class="details__info">
+                        <div>
+                            <i class="fas fa-calendar pe-2"></i>
+                            {{object.created}}
+                        </div>
+                        <div>
+                            <i class="fas fa-eye pe-2"></i>
+                            {{object.views}}
+                        </div>
+                    </div>
+                    <div class="mt-5 text-center">
+                        <a href="{{object.website_url}}" target="_blank" class="btn text-center details__btn">
+                            {% if 'github' in object.website_url %}
+                                <i class="fab fa-github pe-2"></i>
+                                View Code on Github
+                            {% else %}
+                                <i class="fas fa-globe pe-2"></i>
+                                Visit Website
+                            {% endif %}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock content %}
