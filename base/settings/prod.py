@@ -1,15 +1,14 @@
-import django_on_heroku
-import dj_database_url
-
+import os
+import environ
+ 
 from .base import *
+
+env = environ.Env()
+env.read_env()
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['fadi-rezek-salloum.herokuapp.com']
-
-django_heroku.settings(locals())
-
-DATABASES = { 'default': dj_database_url.config() }
+ALLOWED_HOSTS = ['fadiRezekSalloum.pythonanywhere.com']
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
