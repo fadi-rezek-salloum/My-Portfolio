@@ -89,7 +89,7 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     BASE_DIR / 'static'
 ]
-MEDIA_URL = 'projects/uploads/'
+MEDIA_URL = '/projects/uploads/'
 MEDIA_ROOT = 'uploads'
 
 SITE_ID = 1

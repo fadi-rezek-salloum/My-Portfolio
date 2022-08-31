@@ -1,6 +1,6 @@
 import os
 import environ
- 
+
 from .base import *
 
 env = environ.Env()
@@ -8,7 +8,7 @@ env.read_env()
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['fadiRezekSalloum.pythonanywhere.com']
+ALLOWED_HOSTS = ['fadirezeksalloum.pythonanywhere.com']
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
@@ -24,9 +24,23 @@ SECURE_SSL_REDIRECT = True
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
-CLOUDINARY_STORAGE = { 
-  'CLOUD_NAME' : env('CLOUD_NAME'), 
-  'API_KEY' : env('API_KEY'), 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': env('DB_NAME'),
+        'HOST': env('DB_HOST'),
+        'PORT': '3306',
+        'USER': env('DB_USER'),
+        'PASSWORD': env('DB_PASSWORD'),
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+        }
+    }
+}
+
+CLOUDINARY_STORAGE = {
+  'CLOUD_NAME' : env('CLOUD_NAME'),
+  'API_KEY' : env('API_KEY'),
   'API_SECRET' : env('API_SECRET')
 }
 
