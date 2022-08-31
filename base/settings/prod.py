@@ -22,9 +22,6 @@ CSRF_COOKIE_SECURE = True
 
 SECURE_SSL_REDIRECT = True
 
-<<<<<<< HEAD
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -39,14 +36,6 @@ DATABASES = {
     }
 }
 
-CLOUDINARY_STORAGE = {
-  'CLOUD_NAME' : env('CLOUD_NAME'),
-  'API_KEY' : env('API_KEY'),
-  'API_SECRET' : env('API_SECRET')
-}
-
-=======
->>>>>>> 32d0180c6c6d49879cc268bfd9d9a59adf8dc162
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -81,4 +70,3 @@ LOGGING = {
 }
 
 DEBUG_PROPAGATE_EXCEPTIONS = True
-COMPRESS_ENABLED = os.environ.get('COMPRESS_ENABLED', False)
