@@ -22,6 +22,7 @@ CSRF_COOKIE_SECURE = True
 
 SECURE_SSL_REDIRECT = True
 
+<<<<<<< HEAD
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 DATABASES = {
@@ -44,6 +45,8 @@ CLOUDINARY_STORAGE = {
   'API_SECRET' : env('API_SECRET')
 }
 
+=======
+>>>>>>> 32d0180c6c6d49879cc268bfd9d9a59adf8dc162
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
