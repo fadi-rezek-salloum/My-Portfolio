@@ -1,4 +1,5 @@
 import environ
+import cloudinary_storage
 
 from pathlib import Path
 
@@ -25,8 +26,8 @@ INSTALLED_APPS = [
 
     # 3rd Party Packages
     'taggit',
-    'cloudinary_storage',
     'cloudinary',
+    'cloudinary_storage',
 ]
 
 MIDDLEWARE = [
@@ -89,9 +90,17 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     BASE_DIR / 'static'
 ]
-MEDIA_URL = 'projects/uploads/'
+MEDIA_URL = '/uploads/'
 MEDIA_ROOT = 'uploads'
 
 SITE_ID = 1
 
 TAGGIT_CASE_INSENSITIVE = True
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+CLOUDINARY_STORAGE = { 
+  'CLOUD_NAME' : env('CLOUD_NAME'), 
+  'API_KEY' : env('API_KEY'), 
+  'API_SECRET' : env('API_SECRET')
+}

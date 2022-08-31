@@ -7,7 +7,7 @@ class Project(models.Model):
     name = models.CharField(max_length=200)
     description = models.TextField(null=True, blank=True)
 
-    thumbnail = models.ImageField(upload_to='Portfolio/projects', null=True, blank=True)
+    thumbnail = models.ImageField(upload_to='projects/', blank=True)
     slug = models.SlugField(unique=True, max_length=200, blank=True)
 
     website_url = models.URLField(null=True, blank=True)
