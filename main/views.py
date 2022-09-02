@@ -14,6 +14,7 @@ class IndexView(generic.ListView):
         context['backend'] = Skill.objects.filter(category__name__icontains='backend')
         context['other'] = Skill.objects.filter(category__name__icontains='other')
         context['cv'] = CV.objects.first()
+
         return context
 
 
