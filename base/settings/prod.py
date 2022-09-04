@@ -8,7 +8,7 @@ env.read_env()
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://fadi-rezek-salloum.up.railway.app/']
+ALLOWED_HOSTS = ['fadi-rezek-salloum.up.railway.app']
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
