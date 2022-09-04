@@ -22,8 +22,12 @@ CSRF_COOKIE_SECURE = True
 
 SECURE_SSL_REDIRECT = True
 
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
+try:
+    db_from_env = dj_database_url.config(conn_max_age=500)
+    DATABASES = {'default' : db_from_env }
+except:
+    print('DB Error')
+    pass
 
 LOGGING = {
     'version': 1,
