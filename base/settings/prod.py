@@ -1,4 +1,4 @@
-import os
+import dj_database_url
 import environ
 
 from .base import *
@@ -8,7 +8,7 @@ env.read_env()
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['fadirezeksalloum.pythonanywhere.com']
+ALLOWED_HOSTS = ['https://fadi-rezek-salloum.up.railway.app/']
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
@@ -22,19 +22,8 @@ CSRF_COOKIE_SECURE = True
 
 SECURE_SSL_REDIRECT = True
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': env('DB_NAME'),
-        'HOST': env('DB_HOST'),
-        'PORT': '3306',
-        'USER': env('DB_USER'),
-        'PASSWORD': env('DB_PASSWORD'),
-        'OPTIONS': {
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
-        }
-    }
-}
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
 
 LOGGING = {
     'version': 1,
